@@ -24,6 +24,8 @@ fpsController = pygame.time.Clock()
 
 snakePos = [110, 50]
 snakeBody = [[100, 50], [90, 50], [80, 50]]
+direction = 'RIGHT'
+changeto = direction
 
 # Food
 randomX = random.randrange(1,72)*10
