@@ -22,4 +22,7 @@ brown = pygame.Color(81, 20, 7) #food
 # Snake
 fpsController = pygame.time.Clock()
 
-snakePos = 0
+snakePos = [110, 50]
+snakeBody = [[100, 50], [90, 50], [80, 50]]
+
+# Food
