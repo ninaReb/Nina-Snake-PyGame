@@ -26,3 +26,8 @@ snakePos = [110, 50]
 snakeBody = [[100, 50], [90, 50], [80, 50]]
 
 # Food
+randomX = random.randrange(1,72)*10
+randomY = random.randrange(1,46)*10
+
+foodPos = [randomX, randomY]
+foodSpawn = True
