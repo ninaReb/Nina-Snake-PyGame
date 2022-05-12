@@ -42,8 +42,12 @@ def gameOver():
     GOrectangle.midtop = (360, 15)
     playSurface.blit(GOsurface, GOrectangle)
     pygame.display.flip()
+    time.sleep(5)
+    pygame.quit()
+    sys.exit()
     
-gameOver()
-time.sleep(10)
+    
+
+
 
     
