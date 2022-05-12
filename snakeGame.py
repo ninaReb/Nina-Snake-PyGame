@@ -27,6 +27,8 @@ snakeBody = [[100, 50], [90, 50], [80, 50]]
 direction = 'RIGHT'
 changeto = direction
 
+score = 0
+
 # Food
 randomX = random.randrange(1,72)*10
 randomY = random.randrange(1,46)*10
@@ -42,10 +44,24 @@ def gameOver():
     GOrectangle.midtop = (360, 15)
     playSurface.blit(GOsurface, GOrectangle)
     pygame.display.flip()
+    showScore(0)
     time.sleep(5)
     pygame.quit()
     sys.exit()
-    
+
+#Score Board
+def showScore(choice = 1):
+        scoreFont = pygame.font.SysFont('monaco', 30)
+        scoreSurface = scoreFont.render('Score: {0}'.format(score), True, black)
+        scoreRect  = scoreSurface.get_rect()
+        if choice == 1:
+            scoreRect.midtop = (80, 10)
+        else:
+            scoreRect.midtop = (360, 120)
+        playSurface.blit(scoreSurface, scoreRect)
+        pygame.display.flip()
+        
+
 # Events
 while True:
     
@@ -88,6 +104,7 @@ while True:
     snakeBody.insert(0, list(snakePos))
     
     if snakePos[0] == foodPos[0] and snakePos[1] == foodPos[1]:
+        score += 1
         foodSpawn = False
     else:
         snakeBody.pop()
@@ -116,6 +133,7 @@ while True:
         
        
     pygame.display.flip()
-    fpsController.tick(10)
+    showScore()
+    fpsController.tick(12)
 
     
