@@ -37,10 +37,13 @@ foodSpawn = True
 #game over
 def gameOver():
     myFont = pygame.font.SysFont('monaco', 72)
-    GOsurface = myFont.render('Game Over', True, red)
+    GOsurface = myFont.render('Game Over!', True, red)
     GOrectangle = GOsurface.get_rect()
     GOrectangle.midtop = (360, 15)
     playSurface.blit(GOsurface, GOrectangle)
+    pygame.display.flip()
     
 gameOver()
+time.sleep(10)
+
     
