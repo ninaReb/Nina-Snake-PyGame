@@ -97,6 +97,12 @@ while True:
     foodSpawn = True
     
      
-        
+    #Drawing
+    playSurface.fill(cream)
+    for pos in snakeBody:
+        pygame.draw.rect(playSurface, green, pygame.Rect(pos[0], pos[1], 10, 10))
+       
+    pygame.display.flip()
+    fpsController.tick(25)
 
     
