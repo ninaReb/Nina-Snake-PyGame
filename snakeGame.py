@@ -33,3 +33,14 @@ randomY = random.randrange(1,46)*10
 
 foodPos = [randomX, randomY]
 foodSpawn = True
+
+#game over
+def gameOver():
+    myFont = pygame.font.SysFont('monaco', 72)
+    GOsurface = myFont.render('Game Over', True, red)
+    GOrectangle = GOsurface.get_rect()
+    GOrectangle.midtop = (360, 15)
+    playSurface.blit(GOsurface, GOrectangle)
+    
+gameOver()
+    
